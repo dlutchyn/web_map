@@ -49,7 +49,7 @@ def check_country(country: str, location_dict: dict, your_location: tuple):
     your location. (sorted by the distance to your location)
     '''
     country_set = set()
-    Limit = 100
+    Limit = 20
     for key in location_dict:
         if country in key:
             if Limit < 0:
@@ -111,7 +111,7 @@ if __name__ == '__main__':
     country = get_country_location(input_location)
 
     geolocator = Nominatim(user_agent="specify_your_app_name_here")
-    geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
+    geocode = RateLimiter(geolocator.geocode, min_delay_seconds=5)
 
     country_list = check_country(country, diction, input_location)
 
