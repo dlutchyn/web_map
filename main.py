@@ -49,7 +49,7 @@ def check_country(country: str, location_dict: dict, your_location: tuple):
     your location. (sorted by the distance to your location)
     '''
     country_set = set()
-    Limit = 20
+    Limit = 100
     for key in location_dict:
         if country in key:
             if Limit < 0:
